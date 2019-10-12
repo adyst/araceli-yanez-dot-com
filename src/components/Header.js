@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import { links } from "./data"
+
 const Header = () => (
   <header>
     <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -16,9 +18,9 @@ const Header = () => (
 
       <div class="navbar-menu">
         <div class="navbar-end">
-          <Link className="navbar-item" to="/about">About</Link>
-          <Link className="navbar-item" to="/portfolio">Portfolio</Link>
-          <Link className="navbar-item" to="/contact">Contact</Link>
+          {links.map((link, index) => (
+            <Link key={index} className="navbar-item" to={link.anchor}>{link.name}</Link>
+          ))}
         </div>
       </div>
     </nav>
