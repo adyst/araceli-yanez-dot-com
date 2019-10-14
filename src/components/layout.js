@@ -1,13 +1,19 @@
 import React from "react"
 import 'bulma'
 
-import Header from "./Header"
-import Footer from "./Footer"
+import Navigation from "./navigation"
+import Footer from "./footer"
 
 
-const Layout = ({ children }) => (
+
+const Layout = ({ isHome, children }) => (
   <div class="layout">
-    <Header />
+    {isHome
+      ? <header data-aos="fade-down" data-aos-anchor="#home" data-aos-anchor-placement="bottom-center">
+          <Navigation />
+        </header>
+      : <header><Navigation /></header>
+    }
     <div class="layout-content">
       {children}
     </div>

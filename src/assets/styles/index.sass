@@ -10,9 +10,10 @@
 //Set up Bulma global variables
 $family-sans-serif: 'Raleway', sans-serif
 $body-background-color: #ffbe9f
+$footer-padding: 3em 1.5em
 
 //Import Bulma 
-@import "../../node_modules/bulma/bulma.sass";
+@import "../../../node_modules/bulma/bulma.sass";
 
 //Custom variables
 $navbar-height: 3.25em
@@ -26,6 +27,7 @@ $font-title: 'Tiger Walk', sans-serif
 $color-primary: #ffbe9f
 
 body
+  color: white
   background: rgba(255,189,159,1);
   background: -moz-linear-gradient(-45deg, rgba(255,189,159,1) 0%, rgba(255,134,82,1) 20%, rgba(222,67,0,1) 51%, rgba(214,21,31,1) 76%, rgba(198,12,21,1) 100%);
   background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,189,159,1)), color-stop(20%, rgba(255,134,82,1)), color-stop(51%, rgba(222,67,0,1)), color-stop(76%, rgba(214,21,31,1)), color-stop(100%, rgba(198,12,21,1)));
@@ -46,21 +48,31 @@ h2, .content h2
   font-size: $base-h2-size
   font-weight: 400
 
+header
+  color: #ed1d32
+
+  .navbar
+    min-height: $navbar-height
+    .navbar-item
+      color: #ed1d32
+
+footer
+    color: #ed1d32
+    svg
+      color: #ed1d32
+
 .layout-content
   a
     border-bottom: 5px solid white
     border-radius: 5px
-    color: #c60c16
+    color: white
   a:hover
-    border-color: #c60c16
-    color: #410c0e
+    border-color: #ffbe9f
+    color: #ffbe9f
 
 .logo
   font: 2em $font-title
   text-transform: uppercase
-
-.navbar
-  min-height: $navbar-height
 
 #home
   .hero-body
@@ -70,10 +82,10 @@ h2, .content h2
     text-transform: uppercase;
 
 #about
-  background-color: $color-primary;
+  background-color: transparent;
 
 #portfolio
-  background-color: black;
+  background-color: transparent;
   .media
     border-top: none
     flex-flow: column-reverse

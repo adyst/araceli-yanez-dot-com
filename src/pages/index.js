@@ -2,27 +2,31 @@ import React from "react"
 import { graphql } from "gatsby"
 import AOS from 'aos'
 import 'aos/dist/aos.css';
-import "./index.sass"
+import "../assets/styles/index.sass"
 
 import Layout from "../components/layout"
 import Home from "../components/sections/home"
 import About from "../components/sections/about"
 import Portfolio from "../components/sections/portfolio"
 
-const IndexPage = ({ data }) => {
-  AOS.init()
-  
-  const posts = data.allMarkdownRemark.edges
-    .filter(edge => !!edge.node.frontmatter.date)
-    .map(edge => edge.node)
+class IndexPage extends React.Component {
+  componentDidMount() {
+    AOS.init()
+  }
 
-  return (
-    <Layout>
-      <Home />
-      <About />
-      <Portfolio posts={posts}/>
-    </Layout>
-  )
+  render() {
+    const posts = this.props.data.allMarkdownRemark.edges
+      .filter(edge => !!edge.node.frontmatter.date)
+      .map(edge => edge.node)
+
+    return (
+      <Layout isHome="true">
+        <Home />
+        <About />
+        <Portfolio posts={posts}/>
+      </Layout>
+    )
+  }
 }
 
 export default IndexPage

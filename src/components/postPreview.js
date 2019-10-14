@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 const PostPreview = ({ post }) => (
-  <article class="media" data-aos="fade-up" data-aos-duration="1000">
+  <article class="media" data-aos="fade-up" data-aos-duration="500">
     <div class="media-content">
       <div class="content">
         <h2>
