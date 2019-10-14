@@ -9,9 +9,9 @@ import Home from "../components/sections/home"
 import About from "../components/sections/about"
 import Portfolio from "../components/sections/portfolio"
 
-AOS.init()
-
 const IndexPage = ({ data }) => {
+  AOS.init()
+  
   const posts = data.allMarkdownRemark.edges
     .filter(edge => !!edge.node.frontmatter.date)
     .map(edge => edge.node)

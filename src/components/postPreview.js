@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 const PostPreview = ({ post }) => (
-  <article class="media">
+  <article class="media" data-aos="fade-up" data-aos-duration="1000">
     <div class="media-content">
       <div class="content">
         <h2>
@@ -14,7 +14,7 @@ const PostPreview = ({ post }) => (
 
     <div class="media-right">
       <figure class="image">
-        <img class="is-rounded" src="https://bulma.io/images/placeholders/480x480.png" />
+        <img class="is-rounded" src="https://bulma.io/images/placeholders/480x480.png" alt="project details"/>
       </figure>
     </div>
   </article>

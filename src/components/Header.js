@@ -1,3 +1,5 @@
+/* eslint-disable */ 
+
 import React from "react"
 import { Link } from "gatsby"
 
@@ -5,7 +7,10 @@ import { links } from "./data"
 
 const Header = () => (
   <header>
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation"
+      data-aos="fade-down" 
+      data-aos-anchor="#home"
+      data-aos-anchor-placement="bottom-center">
       <div class="navbar-brand">
         <Link className="navbar-item logo" to="/">Araceli Yanez</Link>
 
