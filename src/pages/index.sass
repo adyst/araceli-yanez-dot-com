@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+//Non-Bulma Imports
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,800&display=swap');
+@font-face
+  font-family: 'Tiger Walk';
+  src: url('../fonts/TigerWalk.ttf');
+
+
+//Set up Bulma global variables
+$family-sans-serif: 'Raleway', sans-serif
+
+//Import Bulma 
+@import "../../node_modules/bulma/bulma.sass";
+
+//Custom variables
+$navbar-height: 3.25em
+$base-title-size: 4em
+$base-h1-size: 1.75em
+$base-h2-size: 1em
+
+$font-heading: 'Raleway', sans-serif
+$font-title: 'Tiger Walk', sans-serif
+
+h1, h2, h3, h4
+  font-family: $font-heading
+
+h1
+  font-size: $base-h1-size
+
+h2, .content h2
+  font-size: $base-h2-size
+
+.logo
+  font: 2em $font-title
+  text-transform: uppercase
+
+.navbar
+  min-height: $navbar-height
+  background-color: transparent !important
+
+#home
+  .hero-body
+    text-align: center
+  .title
+    font: $base-title-size $font-title
+    text-transform: uppercase;
+
+#about
+  background-color: pink;
+
+#portfolio
+  background-color: black;
+  .media
+    border-top: none
+    flex-flow: column-reverse
+    align-items: center
+
+    .media-right
+      margin: 0 0 1em 0;
+    .media-content
+      width: 100%;
+    figure
+      height: 15em
+      display: inline-block
+    img
+      height: 100%
+      width: auto
+  
+  .media + .media
+    margin-top: 3em;
+        
+
+#contact
+  background-color: blue;
+
+@media screen and (min-width: 320px)
+  #portfolio
+    .media
+      .media-content
+        width: 75%;
+
+
+@media screen and (min-width: $tablet)
+  h1
+    font-size: $base-h1-size * 1.5
+  h2, .content h2
+    font-size: $base-h2-size * 1.5
+
+  #home
+    .title
+      font-size: $base-title-size * 2
+  
+  #portfolio
+    .media
+      flex-flow: row
+      .media-content
+        width: 60%
+      .media-right
+        width: 40%
+        text-align: right
+
+    .media:nth-child(odd)
+      flex-flow: row-reverse
+      .media-right
+        text-align: left
+
+@media screen and (min-width: $desktop)
+  .container
+    width: 60%
+
+  h2, .content h2
+    font-size: $base-h2-size * 2
+
+  #home
+    .title
+      font-size: $base-title-size * 3

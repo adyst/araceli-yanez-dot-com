@@ -7,7 +7,7 @@ const Header = () => (
   <header>
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <Link className="navbar-item" to="/">Araceli Yanez</Link>
+        <Link className="navbar-item logo" to="/">Araceli Yanez</Link>
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
           <span aria-hidden="true"></span>
