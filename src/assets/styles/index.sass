@@ -37,6 +37,12 @@ body
   background: linear-gradient(135deg, rgba(255,189,159,1) 0%, rgba(255,134,82,1) 20%, rgba(222,67,0,1) 51%, rgba(214,21,31,1) 76%, rgba(198,12,21,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbd9f', endColorstr='#c60c15', GradientType=1 );
 
+html
+  min-height: 100%
+  height: 1px
+
+body
+  min-height: inherit
 
 h1, h2, h3, h4
   font-family: $font-heading
@@ -60,15 +66,24 @@ footer
     color: #ed1d32
     svg
       color: #ed1d32
+      margin-right: 0.5em
+    .copyright
+      float: right
 
-.layout-content
-  a
-    border-bottom: 5px solid white
-    border-radius: 5px
-    color: white
-  a:hover
-    border-color: #ffbe9f
-    color: #ffbe9f
+.layout
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+
+  .layout-content
+    flex: 1
+    a
+      border-bottom: 5px solid white
+      border-radius: 5px
+      color: white
+    a:hover
+      border-color: #ffbe9f
+      color: #ffbe9f
 
 .logo
   font: 2em $font-title
@@ -96,7 +111,7 @@ footer
     .media-content
       width: 100%;
     figure
-      height: 15em
+      height: 10em
       display: inline-block
     img
       height: 100%
@@ -105,9 +120,11 @@ footer
   .media + .media
     margin-top: 3em;
         
+.post
+  padding-top: $navbar-height * 3
+  p
+    margin: 2em 0
 
-#contact
-  background-color: blue;
 
 @media screen and (min-width: 320px)
   #portfolio
@@ -122,9 +139,17 @@ footer
   h2, .content h2
     font-size: $base-h2-size * 1.5
 
+  .container
+    width: 60%
+
   #home
     .title
       font-size: $base-title-size * 2
+
+  #about
+    .container
+      flex-grow: 0
+      width: 60%
   
   #portfolio
     .media
@@ -134,22 +159,26 @@ footer
       .media-right
         width: 40%
         text-align: right
+        margin: 0 0 0 2em
 
     .media:nth-child(odd)
       flex-flow: row-reverse
       .media-right
         text-align: left
+        margin: 0 2em 0 0
 
 @media screen and (min-width: $desktop)
-  .container
-    width: 60%
-
   h2, .content h2
     font-size: $base-h2-size * 2
 
   #home
     .title
       font-size: $base-title-size * 3
+  
+  #portfolio
+    .media
+      figure
+        height: 15em
 
 [data-aos="custom-fade-out"]
   opacity: 1

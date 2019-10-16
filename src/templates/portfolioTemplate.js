@@ -8,9 +8,13 @@ function PortfolioTemplate({ data }) {
 
   return(
     <Layout>
-      {frontmatter.title} 
-      {frontmatter.date}
-      <div dangerouslySetInnerHTML={{__html: html}}/>
+      <section class="post section">
+        <div class="container">
+          <h1>{frontmatter.title}</h1>
+          <em>{frontmatter.description}</em>
+          <div dangerouslySetInnerHTML={{__html: html}}/>
+        </div>
+      </section>
     </Layout>
   )
 }
@@ -24,6 +28,7 @@ export const portfolioQuery = graphql`
         date
         path
         title
+        description
       }
     }
   }

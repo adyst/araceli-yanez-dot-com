@@ -20,7 +20,7 @@ const Footer = () => (
         </nav>
       </div>
       <div class="column">
-        <div class="copyright">© 2019 Araceli Yanez</div>
+        <span class="copyright">© 2019 Araceli Yanez</span>
       </div>
     </div>
   </footer>
