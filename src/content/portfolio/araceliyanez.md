@@ -2,8 +2,8 @@
 path: "/portfolio/araceliyanez"
 date: "2019-10-01"
 title: "This Website"
-description: "A whimsical combination of React, GraphQl, Bulma, and Three.js."
-tags: []
+description: "My personal website using the latest web technologies."
+tags: ["javascript", "react", "graphql", "gatsby"]
 ---
 
 This is additional content....

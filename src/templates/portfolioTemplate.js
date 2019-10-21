@@ -10,8 +10,16 @@ function PortfolioTemplate({ data }) {
     <Layout>
       <section class="post section">
         <div class="container">
-          <h1>{frontmatter.title}</h1>
-          <em>{frontmatter.description}</em>
+          <header>
+            <h1>{frontmatter.title}</h1>
+            <div class="description">
+              <em>{frontmatter.description}</em>
+            </div>
+            <div class="tags">
+              {frontmatter.tags.map(tag => <span class="tag">{tag}</span>)}
+            </div>
+            <hr/>
+          </header>
           <div dangerouslySetInnerHTML={{__html: html}}/>
         </div>
       </section>
@@ -29,6 +37,7 @@ export const portfolioQuery = graphql`
         path
         title
         description
+        tags
       }
     }
   }

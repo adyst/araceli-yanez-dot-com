@@ -3,7 +3,7 @@ path: "/portfolio/dynamicmilestonetimeline"
 date: "2018-8-01"
 title: "Dynamic Milestone Timeline"
 description: "Rolling 40 week window of milestones and deliverables utilizing Google Sheets."
-tags: []
+tags: ["javascript", "google apps script", "python"]
 ---
 
 Note: I cannot publicly disclose the code for this project.

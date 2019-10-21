@@ -3,7 +3,7 @@ path: "/portfolio/testprogramutilities"
 date: "2018-6-01"
 title: "Test Program Utilities"
 description: "Collection of tools for semi-automating a previously manual workflow utilizing Google Sheets."
-tags: []
+tags: ["javascript", "google apps script", "python"]
 ---
 
 Note: I cannot publicly disclose the code for this project.

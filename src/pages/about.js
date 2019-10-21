@@ -4,7 +4,11 @@ import Layout from '../components/layout'
 
 const About = () => (
   <Layout>
-    This is about!
+    <section class="page section">
+        <div class="container">
+          This is about!
+        </div>
+      </section>
   </Layout>
 )
 

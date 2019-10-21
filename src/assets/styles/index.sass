@@ -54,7 +54,7 @@ h2, .content h2
   font-size: $base-h2-size
   font-weight: 400
 
-header
+#main-nav
   color: #ed1d32
 
   .navbar
@@ -119,11 +119,27 @@ footer
   
   .media + .media
     margin-top: 3em;
-        
-.post
+
+.post, .page
   padding-top: $navbar-height * 3
+
+.post
   p
     margin: 2em 0
+  header
+    text-align: center
+  .tags
+    justify-content: center
+    margin-bottom: 0
+  .tag
+    color: #ffbe9f
+    background-color: #ed1d32
+  .description
+    margin-bottom: 2em
+  hr
+    width: 50%
+    margin: 2em auto
+    background-color: #ed1d32
 
 
 @media screen and (min-width: 320px)
