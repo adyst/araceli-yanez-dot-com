@@ -5,9 +5,9 @@ const PostPreview = ({ post }) => (
   <article class="media" data-aos="fade-up" data-aos-duration="500">
     <div class="media-content">
       <div class="content">
-        <h2>
+        <h3>
           <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-        </h2>
+        </h3>
         {post.frontmatter.description}
       </div>
     </div>

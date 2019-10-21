@@ -8,6 +8,7 @@ import Layout from "../components/layout"
 import Home from "../components/sections/home"
 import About from "../components/sections/about"
 import Portfolio from "../components/sections/portfolio"
+import Career from "../components/sections/career"
 
 class IndexPage extends React.Component {
   componentDidMount() {
@@ -24,6 +25,7 @@ class IndexPage extends React.Component {
         <Home />
         <About />
         <Portfolio posts={posts}/>
+        <Career />
       </Layout>
     )
   }

@@ -19,7 +19,8 @@ $footer-padding: 3em 1.5em
 $navbar-height: 3.25em
 $base-title-size: 4em
 $base-h1-size: 1.75em
-$base-h2-size: 1em
+$base-h2-size: 1.5em
+$base-h3-size: 1em
 
 $font-heading: 'Raleway', sans-serif
 $font-title: 'Tiger Walk', sans-serif
@@ -50,12 +51,17 @@ h1, h2, h3, h4
 h1
   font-size: $base-h1-size
 
-h2, .content h2
+h2, h2.title
   font-size: $base-h2-size
+
+h3, .content h3
+  font-size: $base-h3-size
   font-weight: 400
+  margin-bottom: 1em
 
 #main-nav
   color: #ed1d32
+  display: none
 
   .navbar
     min-height: $navbar-height
@@ -65,10 +71,10 @@ h2, .content h2
 footer
     color: #ed1d32
     svg
-      color: #ed1d32
       margin-right: 0.5em
+      color: #ed1d32
     .copyright
-      float: right
+      text-align: center
 
 .layout
   display: flex
@@ -89,15 +95,39 @@ footer
   font: 2em $font-title
   text-transform: uppercase
 
+.container
+  h2.title
+    color: white
+    font-weight: 400
+    text-align: center
+    margin-bottom: 2em
+
+  h2.title:before, h2.title:after 
+    content: ""
+    display: inline-block
+    width: 50%
+    margin: 0 .5em 0 -55%
+    vertical-align: middle
+    border-bottom: 5px solid #ed1d32
+
+  h2.title:after
+    margin: 0 -55% 0 .5em
+
 #home
   .hero-body
     text-align: center
-  .title
+  h1
     font: $base-title-size $font-title
     text-transform: uppercase;
 
+  .slash
+    font-weight: 700
+
 #about
   background-color: transparent;
+
+  .level
+    margin-top: 2em
 
 #portfolio
   background-color: transparent;
@@ -120,8 +150,15 @@ footer
   .media + .media
     margin-top: 3em;
 
+#career
+  padding-top: 8em
+
 .post, .page
   padding-top: $navbar-height * 3
+
+.tag
+  color: #ffbe9f !important
+  background-color: #ed1d32 !important
 
 .post
   p
@@ -131,9 +168,6 @@ footer
   .tags
     justify-content: center
     margin-bottom: 0
-  .tag
-    color: #ffbe9f
-    background-color: #ed1d32
   .description
     margin-bottom: 2em
   hr
@@ -152,14 +186,19 @@ footer
 @media screen and (min-width: $tablet)
   h1
     font-size: $base-h1-size * 1.5
-  h2, .content h2
+  h2, h2.title
     font-size: $base-h2-size * 1.5
+  h3, .content h3
+    font-size: $base-h3-size * 1.5
 
   .container
     width: 60%
+  
+  .page .container
+    width: 75%
 
   #home
-    .title
+    h1
       font-size: $base-title-size * 2
 
   #about
@@ -182,13 +221,14 @@ footer
       .media-right
         text-align: left
         margin: 0 2em 0 0
+    
+  footer
+    .copyright
+      text-align: right
 
 @media screen and (min-width: $desktop)
-  h2, .content h2
-    font-size: $base-h2-size * 2
-
   #home
-    .title
+    h1
       font-size: $base-title-size * 3
   
   #portfolio

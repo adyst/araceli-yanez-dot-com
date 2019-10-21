@@ -6,4 +6,4 @@ description: "My personal website using the latest web technologies."
 tags: ["javascript", "react", "graphql", "gatsby"]
 ---
 
-This is additional content....
+There is text here
