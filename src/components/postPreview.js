@@ -1,10 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 
 const PostPreview = ({ post }) => (
-  <article class="media" data-aos="fade-up" data-aos-duration="500">
-    <div class="media-content">
-      <div class="content">
+  <article className="media" data-aos="fade-up" data-aos-duration="500">
+    <div className="media-content">
+      <div className="content">
         <h3>
           <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
         </h3>
@@ -12,10 +13,8 @@ const PostPreview = ({ post }) => (
       </div>
     </div>
 
-    <div class="media-right">
-      <figure class="image">
-        <img class="is-rounded" src="https://bulma.io/images/placeholders/480x480.png" alt="project details"/>
-      </figure>
+    <div className="media-right">
+      <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} alt="project details"/>
     </div>
   </article>
 )

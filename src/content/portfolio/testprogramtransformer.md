@@ -4,6 +4,7 @@ date: "2019-2-01"
 title: "Test Program Transformer"
 description: "Multi-platform (Windows and Linux) application that takes a complex relationship of files and combines the data into an intelligible format for customer analysis."
 tags: ["java"]
+featuredImage: "../../assets/images/javascript.png"
 ---
 
 Note: I cannot publicly disclose the code for this project.

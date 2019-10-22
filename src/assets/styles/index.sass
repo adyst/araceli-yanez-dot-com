@@ -19,7 +19,7 @@ $footer-padding: 3em 1.5em
 $navbar-height: 3.25em
 $base-title-size: 4em
 $base-h1-size: 1.75em
-$base-h2-size: 1.5em
+$base-h2-size: 2em
 $base-h3-size: 1em
 
 $font-heading: 'Raleway', sans-serif
@@ -52,12 +52,18 @@ h1
   font-size: $base-h1-size
 
 h2, h2.title
-  font-size: $base-h2-size
+  font: $base-h2-size $font-title
+  text-transform: uppercase
 
 h3, .content h3
   font-size: $base-h3-size
   font-weight: 400
   margin-bottom: 1em
+
+.background
+  position: absolute
+  top: 0
+  left: 0
 
 #main-nav
   color: #ed1d32
@@ -84,11 +90,11 @@ footer
   .layout-content
     flex: 1
     a
-      border-bottom: 5px solid white
+      border-bottom: 5px solid rgb(108, 0, 37)
       border-radius: 5px
-      color: white
+      color: rgb(108, 0, 37)
     a:hover
-      border-color: #ffbe9f
+      border-color: rgb(108, 0, 37)
       color: #ffbe9f
 
 .logo
@@ -108,7 +114,7 @@ footer
     width: 50%
     margin: 0 .5em 0 -55%
     vertical-align: middle
-    border-bottom: 5px solid #ed1d32
+    border-bottom: 5px solid rgb(108, 0, 37) 
 
   h2.title:after
     margin: 0 -55% 0 .5em
@@ -119,6 +125,7 @@ footer
   h1
     font: $base-title-size $font-title
     text-transform: uppercase;
+    color: rgb(108, 0, 37)
 
   .slash
     font-weight: 700
@@ -140,12 +147,10 @@ footer
       margin: 0 0 1em 0;
     .media-content
       width: 100%;
-    figure
-      height: 10em
-      display: inline-block
-    img
-      height: 100%
-      width: auto
+    .gatsby-image-wrapper
+      img
+        border-radius: 50%;
+        height: 10em
   
   .media + .media
     margin-top: 3em;
@@ -227,6 +232,9 @@ footer
       text-align: right
 
 @media screen and (min-width: $desktop)
+  h2, h2.title
+    font-size: $base-h2-size * 2
+
   #home
     h1
       font-size: $base-title-size * 3

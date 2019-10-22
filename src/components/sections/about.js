@@ -1,7 +1,7 @@
 import React from 'react'
  
 const About = () => (
-  <section id="about" class="hero is-fullheight">
+  <section id="about" className="hero is-fullheight">
     <div className="hero-body">
       <div className="container" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000">
         <h2>

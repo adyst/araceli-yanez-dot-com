@@ -4,6 +4,7 @@ date: "2018-7-01"
 title: "Hardware Data Proxy"
 description: "Client-server application that serves as a proxy between a Java and WCF client."
 tags: ["C#"]
+featuredImage: "../../assets/images/javascript.png"
 ---
 
 Note: I cannot publicly disclose the code for this project.

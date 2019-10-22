@@ -8,15 +8,15 @@ function PortfolioTemplate({ data }) {
 
   return(
     <Layout>
-      <section class="post section">
-        <div class="container">
+      <section className="post section">
+        <div className="container">
           <header>
             <h1>{frontmatter.title}</h1>
-            <div class="description">
+            <div className="description">
               <em>{frontmatter.description}</em>
             </div>
-            <div class="tags">
-              {frontmatter.tags.map(tag => <span class="tag">{tag}</span>)}
+            <div className="tags">
+              {frontmatter.tags.map(tag => <span className="tag">{tag}</span>)}
             </div>
             <hr/>
           </header>
