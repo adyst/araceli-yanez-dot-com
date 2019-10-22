@@ -4,7 +4,7 @@ date: "2018-8-01"
 title: "Dynamic Milestone Timeline"
 description: "Rolling 40 week window of milestones and deliverables utilizing Google Sheets."
 tags: ["javascript", "google apps script", "python"]
-featuredImage: "../../assets/images/javascript.png"
+featuredImage: "../../assets/images/javascript_gapps.png"
 ---
 
 Note: I cannot publicly disclose the code for this project.

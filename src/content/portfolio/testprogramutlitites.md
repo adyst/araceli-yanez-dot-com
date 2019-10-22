@@ -4,7 +4,7 @@ date: "2018-6-01"
 title: "Test Program Utilities"
 description: "Collection of tools for semi-automating a previously manual workflow utilizing Google Sheets."
 tags: ["javascript", "google apps script", "python"]
-featuredImage: "../../assets/images/javascript.png"
+featuredImage: "../../assets/images/javascript_gapps.png"
 ---
 
 Note: I cannot publicly disclose the code for this project.

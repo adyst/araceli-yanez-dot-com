@@ -1,4 +1,7 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
+import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
  
 const About = () => (
   <section id="about" className="hero is-fullheight">
@@ -10,13 +13,13 @@ const About = () => (
         </h2>
         <div className="level is-mobile">
           <div className="level-item has-text-centered">
-            <h3><a href="mailto:araceli.x.yanez@gmail.com">Email</a></h3>
+            <a className="icon" href="mailto:araceli.x.yanez@gmail.com"><FontAwesomeIcon icon={faEnvelopeOpenText} size="3x"/></a>
           </div>
           <div className="level-item has-text-centered">
-            <h3><a href="https://github.com/adyst/">GitHub</a></h3>
+            <a className="icon" href="https://github.com/adyst/"><FontAwesomeIcon icon={faGithubSquare} size="3x"/></a>
           </div>
           <div className="level-item has-text-centered">
-            <h3><a href="https://www.linkedin.com/in/araceliyanez/">LinkedIn</a></h3>
+            <a className="icon" href="https://www.linkedin.com/in/araceliyanez/"><FontAwesomeIcon icon={faLinkedin} size="3x"/></a>
           </div>
         </div>
       </div>
