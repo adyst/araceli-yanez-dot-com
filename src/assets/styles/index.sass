@@ -1,3 +1,5 @@
+//TODO: Fix the terrible important overrides by importing bulma correctly....
+
 @charset "utf-8";
 
 //Non-Bulma Imports
@@ -6,14 +8,7 @@
   font-family: 'Tiger Walk';
   src: url('../fonts/TigerWalk.ttf');
 
-
-//Set up Bulma global variables
-$family-sans-serif: 'Raleway', sans-serif
-$body-background-color: #ffbe9f
-$footer-padding: 3em 1.5em
-
-//Import Bulma 
-@import "../../../node_modules/bulma/bulma.sass";
+@import "~bulma/bulma";
 
 //Custom variables
 $navbar-height: 3.25em
@@ -28,7 +23,8 @@ $font-title: 'Tiger Walk', sans-serif
 $color-primary: #ffbe9f
 
 body
-  color: white
+  font-family: 'Raleway', sans-serif !important
+  color: white !important
   background: rgba(255,189,159,1);
   background: -moz-linear-gradient(-45deg, rgba(255,189,159,1) 0%, rgba(255,134,82,1) 20%, rgba(222,67,0,1) 51%, rgba(214,21,31,1) 76%, rgba(198,12,21,1) 100%);
   background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,189,159,1)), color-stop(20%, rgba(255,134,82,1)), color-stop(51%, rgba(222,67,0,1)), color-stop(76%, rgba(214,21,31,1)), color-stop(100%, rgba(198,12,21,1)));
@@ -49,14 +45,14 @@ h1, h2, h3, h4
   font-family: $font-heading
 
 h1
-  font-size: $base-h1-size
+  font-size: $base-h1-size !important
 
 h2, h2.title
-  font: $base-h2-size $font-title
+  font: $base-h2-size $font-title !important
   text-transform: uppercase
 
 h3, .content h3
-  font-size: $base-h3-size
+  font-size: $base-h3-size !important
   font-weight: 400
   margin-bottom: 1em
 
@@ -75,6 +71,7 @@ h3, .content h3
       color: #ed1d32
 
 footer
+    padding: 3em 1.5em
     color: #ed1d32
     svg
       margin-right: 0.5em
@@ -93,9 +90,8 @@ footer
       color: #ed1d32
       border: none
     a
-      border-bottom: 5px solid rgb(108, 0, 37)
-      border-radius: 5px
       color: rgb(108, 0, 37)
+      font-weight: 400
     a:hover
       border-color: rgb(108, 0, 37)
       color: #ffbe9f
@@ -126,7 +122,7 @@ footer
   .hero-body
     text-align: center
   h1
-    font: $base-title-size $font-title
+    font: $base-title-size $font-title !important
     text-transform: uppercase;
     color: #ed1d32
 
@@ -151,9 +147,9 @@ footer
     .media-content
       width: 100%;
     .gatsby-image-wrapper
+      max-width: 300px
       img
         border-radius: 50%;
-        height: 10em
   
   .media + .media
     margin-top: 3em;
@@ -162,7 +158,7 @@ footer
   padding-top: 8em
 
 .post, .page
-  padding-top: $navbar-height * 3
+  padding-top: $navbar-height * 2 !important
 
 .tag
   color: #ffbe9f !important
@@ -188,26 +184,26 @@ footer
   #portfolio
     .media
       .media-content
-        width: 75%;
+        width: 75%
 
 
 @media screen and (min-width: $tablet)
   h1
-    font-size: $base-h1-size * 1.5
+    font-size: $base-h1-size * 1.5 !important
   h2, h2.title
-    font-size: $base-h2-size * 1.5
+    font-size: $base-h2-size * 1.5 !important
   h3, .content h3
-    font-size: $base-h3-size * 1.5
+    font-size: $base-h3-size * 1.5 !important
 
   .container
-    width: 60%
+    width: 60% !important
   
   .page .container
-    width: 75%
+    width: 75% !important
 
   #home
     h1
-      font-size: $base-title-size * 2
+      font-size: $base-title-size * 2 !important
 
   #about
     .container
@@ -221,14 +217,16 @@ footer
         width: 60%
       .media-right
         width: 40%
-        text-align: right
         margin: 0 0 0 2em
+        .gatsby-image-wrapper
+          margin: 0 auto 0 0
 
     .media:nth-child(odd)
       flex-flow: row-reverse
       .media-right
-        text-align: left
         margin: 0 2em 0 0
+        .gatsby-image-wrapper
+          margin: 0 0 0 auto
     
   footer
     .copyright
@@ -236,11 +234,11 @@ footer
 
 @media screen and (min-width: $desktop)
   h2, h2.title
-    font-size: $base-h2-size * 2
+    font-size: $base-h2-size * 2 !important
 
   #home
     h1
-      font-size: $base-title-size * 3
+      font-size: $base-title-size * 3 !important
   
   #portfolio
     .media

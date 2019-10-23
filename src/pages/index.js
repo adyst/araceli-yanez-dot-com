@@ -1,8 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import AOS from 'aos'
-import 'aos/dist/aos.css';
-import "../assets/styles/index.sass"
+import 'aos/dist/aos.css'
 
 import Layout from "../components/layout"
 import Home from "../components/sections/home"

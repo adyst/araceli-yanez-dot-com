@@ -16,7 +16,7 @@ function PortfolioTemplate({ data }) {
               <em>{frontmatter.description}</em>
             </div>
             <div className="tags">
-              {frontmatter.tags.map(tag => <span className="tag">{tag}</span>)}
+              {frontmatter.tags.map((tag, index) => <span className="tag" key={index}>{tag}</span>)}
             </div>
             <hr/>
           </header>

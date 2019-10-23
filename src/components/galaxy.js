@@ -27,6 +27,7 @@ class Galaxy extends React.Component {
     this.windowHalfY = window.innerHeight / 2
     this.theta = 0
     this.radius = 500
+    this.isMobile = true
 
     this.addSphericalStars()
 
@@ -80,6 +81,7 @@ class Galaxy extends React.Component {
   onWindowResize = () => {
     this.camera.aspect = window.innerWidth / window.innerHeight
     this.camera.updateProjectionMatrix()
+    this.isMobile = window.matchMedia('(max-width: 768px)').matches
   
     this.renderer.setSize(window.innerWidth, window.innerHeight)
   }
@@ -105,9 +107,7 @@ class Galaxy extends React.Component {
   }
 
   renderScene = () => {
-    let isMobile = window.matchMedia('(max-width: 768px)')
-
-    if(!isMobile){
+    if(this.isMobile){
       this.theta += 0.01
       this.camera.position.x = this.radius * Math.sin( THREE.Math.degToRad( this.theta ) )
       this.camera.position.y = this.radius * Math.sin( THREE.Math.degToRad( this.theta ) )
