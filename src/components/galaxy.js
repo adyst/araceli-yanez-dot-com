@@ -27,7 +27,7 @@ class Galaxy extends React.Component {
     this.windowHalfY = window.innerHeight / 2
     this.theta = 0
     this.radius = 500
-    this.isMobile = true
+    this.isMobile = window.matchMedia('(max-width: 768px)').matches
 
     this.addSphericalStars()
 

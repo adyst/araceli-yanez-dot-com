@@ -12,7 +12,7 @@
 
 //Custom variables
 $navbar-height: 3.25em
-$base-title-size: 4em
+$base-title-size: 6em
 $base-h1-size: 1.75em
 $base-h2-size: 2em
 $base-h3-size: 1em
@@ -131,9 +131,14 @@ footer
 
 #about
   background-color: transparent;
+  text-align: center
 
   .level
-    margin-top: 2em
+    margin-top: 4em
+
+  h2
+    font: 1.5em $font-heading !important
+    text-transform: none
 
 #portfolio
   background-color: transparent;
@@ -203,12 +208,15 @@ footer
 
   #home
     h1
-      font-size: $base-title-size * 2 !important
+      font-size: $base-title-size * 1.5 !important
 
   #about
     .container
       flex-grow: 0
       width: 60%
+    
+    h2
+      font-size: 2em !important
   
   #portfolio
     .media
@@ -238,7 +246,11 @@ footer
 
   #home
     h1
-      font-size: $base-title-size * 3 !important
+      font-size: $base-title-size * 2 !important
+
+  #about
+    h2
+      font-size: 3em !important
   
   #portfolio
     .media
