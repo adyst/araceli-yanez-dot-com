@@ -3,7 +3,7 @@
   "private": true,
   "description": "Personal website of Araceli Yanez.",
   "version": "0.1.0",
-  "author": "Araceli Yanez <araceli.x.yanez@gmail.com>",
+  "author": "Araceli Yanez",
   "main": "src/assets/styles/index.sass",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
