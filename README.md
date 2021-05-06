@@ -1,97 +1,172 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# A statically generated blog example using Next.js and Prismic
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using [Prismic](https://prismic.io/) as the data source.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+## Demo
 
-## 🚀 Quick start
+### [https://next-blog-prismic.vercel.app/](https://next-blog-prismic.vercel.app/)
 
-1.  **Create a Gatsby site.**
+## Deploy your own
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+Once you have access to [the environment variables you'll need](#step-5-set-up-environment-variables), deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/cms-prismic&project-name=cms-prismic&repository-name=cms-prismic&env=PRISMIC_API_TOKEN,PRISMIC_REPOSITORY_NAME&envDescription=Required%20to%20connect%20the%20app%20with%20Prismic&envLink=https://vercel.link/cms-prismic-env)
 
-1.  **Start developing.**
+### Related examples
 
-    Navigate into your new site’s directory and start it up.
+- [WordPress](/examples/cms-wordpress)
+- [DatoCMS](/examples/cms-datocms)
+- [Sanity](/examples/cms-sanity)
+- [TakeShape](/examples/cms-takeshape)
+- [Contentful](/examples/cms-contentful)
+- [Strapi](/examples/cms-strapi)
+- [Agility CMS](/examples/cms-agilitycms)
+- [Cosmic](/examples/cms-cosmic)
+- [ButterCMS](/examples/cms-buttercms)
+- [Storyblok](/examples/cms-storyblok)
+- [Kontent](/examples/cms-kontent)
+- [Ghost](/examples/cms-ghost)
+- [Blog Starter](/examples/blog-starter)
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+## How to use
 
-1.  **Open the source code and start editing!**
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
 
-    Your site is now running at `http://localhost:8000`!
+```bash
+npx create-next-app --example cms-prismic cms-prismic-app
+# or
+yarn create next-app --example cms-prismic cms-prismic-app
+```
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+## Configuration
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+### Step 1. Create an account and a repository on Prismic
 
-## 🧐 What's inside?
+First, [create an account on Prismic](https://prismic.io/).
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+After creating an account, create a **repository** from the [dashboard](https://prismic.io/dashboard/) and assign to it any name of your liking.
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+### Step 2. Create an `author` type
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+From the repository page, create a new **custom type**:
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+- The name should be `author`.
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+Next, add these fields (you don't have to modify the settings):
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+- `name` - **Key Text** field
+- `picture` - **Image** field
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+Alternatively, you can copy the JSON in [`types/author.json`](types/author.json), then click on **JSON editor** and paste it there.
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+Save the type and continue.
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+### Step 3. Create a `post` type
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+From the repository page, create a new **custom type**:
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+- The name should be `post`.
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+Next, add these fields (you don't have to modify the settings unless specified):
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+- `title` - **Title** field
+- `content` - **Rich Text** field
+- `excerpt` - **Key Text** field
+- `coverimage` - **Image** field
+- `date` - **Date** field
+- `author` - **Content relationship** field, you may also add `author` to the **Constraint to custom type** option to only accept documents from the `author` type.
+- `slug` - **UID** field.
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+Alternatively, you can copy the JSON in [`types/post.json`](types/post.json), then click on **JSON editor** and paste it there.
 
-## 🎓 Learning Gatsby
+Save the type and continue.
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+### Step 4. Populate Content
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+Go to the **Content** page, it's in the menu at the top left, then click on **Create new** and select the **author** type:
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+- You just need **1 author document**.
+- Use dummy data for the text.
+- For the image, you can download one from [Unsplash](https://unsplash.com/).
 
-## 💫 Deploy
+Next, select **Post** and create a new document.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+- We recommend creating at least **2 Post documents**.
+- Use dummy data for the text.
+- You can write markdown for the **content** field.
+- For images, you can download them from [Unsplash](https://unsplash.com/).
+- Pick the **author** you created earlier.
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+**Important:** For each document, you need to click **Publish** after saving. If not, the document will be in the draft state.
+
+### Step 5. Set up environment variables
+
+Follow the instructions in [this post](https://intercom.help/prismicio/en/articles/1036153-generating-an-access-token) to generate a new access token.
+
+Next, copy the `.env.local.example` file in this directory to `.env.local` (which will be ignored by Git):
+
+```bash
+cp .env.local.example .env.local
+```
+
+Then set each variable on `.env.local`:
+
+- `PRISMIC_API_TOKEN` should be the **Permanent access token** you just created
+- `PRISMIC_REPOSITORY_NAME` is the name of your repository (the one in the URL)
+- `PRISMIC_REPOSITORY_LOCALE` is the locale of your repository. Defaults to `en-us`
+
+Your `.env.local` file should look like this:
+
+```bash
+PRISMIC_API_TOKEN=...
+PRISMIC_REPOSITORY_NAME=...
+PRISMIC_REPOSITORY_LOCALE=...
+```
+
+Make sure the locale matches your settings in the Prismic dashboard.
+
+### Step 6. Run Next.js in development mode
+
+```bash
+npm install
+npm run dev
+
+# or
+
+yarn install
+yarn dev
+```
+
+Your blog should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
+
+### Step 7. Try preview mode
+
+On your repository page, go to **Settings**, click on **Previews** and then **Create a New Preview** for development, fill the form like so:
+
+- **Site Name**: may be anything, like `development`
+- **Domain of Your Application**: `http://localhost:3000`
+- **Link Resolver**: `/api/preview`
+
+Once saved, go to one of the posts you've created and:
+
+- **Update the title**. For example, you can add `[Draft]` in front of the title.
+- Click **Save**, but **DO NOT** click **Publish**. By doing this, the post will be in draft state.
+- Right next to the **Publish** button you should see the **Preview** button, displayed with an eye icon. Click on it!
+
+You should now be able to see the updated title. To exit preview mode, you can click on **Click here to exit preview mode** at the top of the page.
+
+### Step 8. Deploy on Vercel
+
+You can deploy this app to the cloud with [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+#### Deploy Your Local Project
+
+To deploy your local project to Vercel, push it to GitHub/GitLab/Bitbucket and [import to Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example).
+
+**Important**: When you import your project on Vercel, make sure to click on **Environment Variables** and set them to match your `.env.local` file.
+
+#### Deploy from Our Template
+
+Alternatively, you can deploy using our template by clicking on the Deploy button below.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/cms-prismic&project-name=cms-prismic&repository-name=cms-prismic&env=PRISMIC_API_TOKEN,PRISMIC_REPOSITORY_NAME&envDescription=Required%20to%20connect%20the%20app%20with%20Prismic&envLink=https://vercel.link/cms-prismic-env)
